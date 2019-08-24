@@ -84,11 +84,13 @@ module Ufo
         puts "Template saved. Exiting."
         exit 1
       end
-      {
+      opts = {
         parameters: parameters,
         stack_name: @stack_name,
         template_body: template_body,
       }
+      opts[:notification_arns] = ENV['UFO_STACK_NOTIFICATION_ARNS'] if ENV['UFO_STACK_NOTIFICATION_ARNS']
+      opts
     end
 
     def parameters
