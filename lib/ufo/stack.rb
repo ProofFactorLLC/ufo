@@ -89,7 +89,7 @@ module Ufo
         stack_name: @stack_name,
         template_body: template_body,
       }
-      opts[:notification_arns] = ENV['UFO_STACK_NOTIFICATION_ARNS'] if ENV['UFO_STACK_NOTIFICATION_ARNS']
+      opts[:notification_arns] = [ENV['UFO_STACK_NOTIFICATION_ARNS']] if ENV['UFO_STACK_NOTIFICATION_ARNS']
       opts
     end
 
